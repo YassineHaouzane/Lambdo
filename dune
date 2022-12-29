@@ -4,6 +4,7 @@
 (ocamllex lexer)
 
 (executable
+ (libraries cmdliner)
  (preprocess
   (pps ppx_deriving.show))
  (name main))
