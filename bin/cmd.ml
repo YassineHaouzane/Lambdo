@@ -6,9 +6,10 @@ let read_whole_file filename =
 
 let parse_args () =
   match Array.length Sys.argv with
+  | 1 -> Reader.repl ()
   | 2 ->
       let argv1 = Sys.argv.(1) in
-      if argv1 = "--r" then Reader.repl ()
+      if argv1 = "-r" then Reader.repl ()
       else
         let filename = argv1 in
         let s = read_whole_file filename in
