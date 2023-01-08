@@ -1,0 +1,4 @@
+(executable
+ (public_name lambdo)
+ (name main)
+ (libraries lambdo))

@@ -3,7 +3,7 @@
 
 (ocamllex lexer)
 
-(executable
+(library
  (preprocess
   (pps ppx_deriving.show))
  (name lambdo))

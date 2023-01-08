@@ -1,3 +1,4 @@
+open Lambdo
 open Ast_type
 open Eval
 
