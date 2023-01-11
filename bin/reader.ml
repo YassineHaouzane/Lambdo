@@ -1,6 +1,6 @@
-open Lambdo
-open Ast_type
-open Eval
+open Lambdo_parser
+open Lambdo_ast.Ast_type
+open Lambdo_eval.Eval
 
 let eval_string input =
   let buffer = Lexing.from_string input in

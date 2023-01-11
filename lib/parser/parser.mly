@@ -1,5 +1,5 @@
 %{
-  open Ast_type
+  open Lambdo_ast.Ast_type
 %}
 
 %token<string> IDENTIFIER
@@ -8,7 +8,7 @@
 %token LEFT_PARENTHESIS RIGHT_PARENTHESIS
 %token EOF
 
-%start<Ast_type.expr> program
+%start<expr> program
 %nonassoc LEFT_PARENTHESIS 
 %nonassoc ARROW LAMBDA
 %nonassoc IDENTIFIER 

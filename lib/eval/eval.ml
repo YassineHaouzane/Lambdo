@@ -1,4 +1,4 @@
-open Ast_type
+open Lambdo_ast.Ast_type
 open Id_generator
 module Identifier_set = Set.Make (String)
 

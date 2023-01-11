@@ -1,0 +1,4 @@
+(library
+ (libraries lambdo.parser)
+ (name lambdo_eval)
+ (public_name lambdo.eval))

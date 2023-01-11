@@ -1,5 +1,5 @@
 module type Generator_type = sig
-  val new_id : unit -> Ast_type.identifier
+  val new_id : unit -> Lambdo_ast.Ast_type.identifier
 end
 
 module Generator : Generator_type = struct

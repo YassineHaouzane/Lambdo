@@ -1,0 +1,9 @@
+(menhir
+ (modules parser))
+
+(ocamllex lexer)
+
+(library
+ (libraries lambdo.ast)
+ (public_name lambdo.parser)
+ (name lambdo_parser))

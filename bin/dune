@@ -1,4 +1,4 @@
 (executable
  (public_name lambdo)
  (name main)
- (libraries lambdo))
+ (libraries lambdo_parser lambdo_eval))
