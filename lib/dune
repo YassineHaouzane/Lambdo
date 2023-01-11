@@ -4,6 +4,4 @@
 (ocamllex lexer)
 
 (library
- (preprocess
-  (pps ppx_deriving.show))
  (name lambdo))

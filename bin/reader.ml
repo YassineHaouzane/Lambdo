@@ -7,7 +7,7 @@ let eval_string input =
   try
     let ast = Parser.program Lexer.read buffer in
     let evaluated_ast = eval ast in
-    print_string (show_expr evaluated_ast)
+    print_string (pp evaluated_ast)
   with
   | Lexer.LexingError msg -> Printf.fprintf stderr "%s%!" msg
   | Parser.Error ->

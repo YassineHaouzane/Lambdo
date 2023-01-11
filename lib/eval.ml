@@ -53,8 +53,8 @@ let replace_all e1 e2 =
   match e1 with
   | Lambda (id, fun_body) -> replace_all_recursively id fun_body e2
   | _ ->
-      let expr_string = show_expr e1 in
-      let parameter_string = show_expr e2 in
+      let expr_string = pp e1 in
+      let parameter_string = pp e2 in
       let error_msg =
         Format.sprintf "Error: trying to apply expr: %s as a function to %s"
           expr_string parameter_string
