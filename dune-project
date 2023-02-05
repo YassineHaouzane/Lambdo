@@ -14,4 +14,4 @@
 (package
  (name lambdo)
  (description "Small lambda calculus interpreter")
- (depends ocaml dune menhir ppx_deriving.show))
+ (depends ocaml dune menhir ppx_deriving.show cmdliner))
