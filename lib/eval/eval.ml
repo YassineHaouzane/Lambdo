@@ -68,4 +68,5 @@ let rec eval expr =
       let e1_eval = eval e1 in
       let e2_eval = eval e2 in
       replace_all e1_eval e2_eval
-  | Lambda (x, e1) -> Lambda (x, eval e1)
+  (* Lazy evaluation *)
+  | Lambda (_, _) -> expr
