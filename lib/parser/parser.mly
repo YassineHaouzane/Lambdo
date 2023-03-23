@@ -10,9 +10,10 @@
 
 %start<expr> program
 %nonassoc LEFT_PARENTHESIS 
-%nonassoc ARROW LAMBDA
+%nonassoc LAMBDA
 %nonassoc IDENTIFIER 
 %left APP
+%nonassoc FUN
 
 %%
 let program := ~ = expr; EOF; <>
@@ -20,5 +21,5 @@ let program := ~ = expr; EOF; <>
 let expr :=
   | e1 = expr; e2 = expr; %prec APP    { Call(e1, e2) }
   | s = IDENTIFIER;                  { Var s }
-  | LAMBDA; s = IDENTIFIER; ARROW; e = expr;  { Lambda (s, e) }
+  | LAMBDA; s = IDENTIFIER; ARROW; e = expr; %prec FUN  { Lambda (s, e) }
   | LEFT_PARENTHESIS; ~ = expr; RIGHT_PARENTHESIS; <>
