@@ -75,3 +75,8 @@ let rec eval expr =
 
 let%test "simple beta reduction" =
   eval (Call (Lambda ("x", Var "x"), Var "x")) = Var "x"
+(* (\f -> f (\x -> x)) (\x -> x) *)
+
+let%test "succession of beta reductions" =
+  let id = Lambda ("x", Var "x") in
+  eval (Call (Lambda ("f", id), id)) = id
