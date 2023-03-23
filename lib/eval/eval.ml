@@ -61,6 +61,8 @@ let replace_all e1 e2 =
       in
       raise (Failure error_msg)
 
+(* applies beta reduction until we are in normal form
+   and applies alpha conversion if necessary *)
 let rec eval expr =
   match expr with
   | Var _ -> expr
@@ -70,3 +72,6 @@ let rec eval expr =
       replace_all e1_eval e2_eval
   (* Lazy evaluation *)
   | Lambda (_, _) -> expr
+
+let%test "simple beta reduction" =
+  eval (Call (Lambda ("x", Var "x"), Var "x")) = Var "x"

@@ -1,4 +1,7 @@
 (library
  (libraries lambdo.parser)
  (name lambdo_eval)
- (public_name lambdo.eval))
+ (public_name lambdo.eval)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test)))
